@@ -6,7 +6,7 @@ public class ValidationUtils {
 
     public static class InvalidRecordDetails {
         public Integer rowNumber;
-        String columnValue;
+        public String columnValue;
 
         public String checkType;
 
