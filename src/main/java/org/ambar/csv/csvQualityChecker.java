@@ -7,6 +7,9 @@ import org.ambar.csv.commonUtils.validationType;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import org.ambar.utils.CustomerLogFormatter;
 
 public class csvQualityChecker {
     private String csvPath;
@@ -104,7 +107,13 @@ public class csvQualityChecker {
         }
     }
 
-//    public static void main(String[] args) {
+//    public static void main(String[] args) throws IOException {
+//        Logger logger = Logger.getLogger("MyLogger");
+//        FileHandler fileHandler = new FileHandler("myLogFile.log",true);
+//        CustomerLogFormatter formatter = new CustomerLogFormatter(CustomerLogFormatter.format.DETAILED);
+//        fileHandler.setFormatter(formatter);
+//        logger.addHandler(fileHandler);
+//
 //        String csvPath = "D:\\ambar\\IntelliJProjects\\csvQualityChecker\\resource\\data\\abc.csv";
 //        Map<String,validationType> checkMetadata = new LinkedHashMap<>();
 //        checkMetadata.put("Col1", validationType.UniqueCheck);
@@ -113,6 +122,8 @@ public class csvQualityChecker {
 //        csvQualityChecker cqHandle = new csvQualityChecker(csvPath,checkMetadata);
 //        cqHandle.runCheckers();
 //        cqHandle.printResults();
+//        logger.info("Completed All Checks Try3");
+//
 //        //List<List<ValidationUtils.InvalidRecordDetails>> Result =  cqHandle.AllResult;
 //        //System.out.println(Result.size());
 //    }
